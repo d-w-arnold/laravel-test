@@ -1,0 +1,13 @@
+Tasks 2-4: Having not used Laravel before, and having not used MVC methodology since my second year of university 2017-18,
+I'm still getting to grips with the concept of 'relationships' between models. How can they be useful?
+Not sure if what I've done for these tasks are correct, as I'm not sure how I can test my additions task-by-task?
+I'm making additions which seem logical in regards to the docs I've used for guidance:
+
+https://laravel.com/docs/8.x/eloquent-relationships
+https://laravel.com/docs/7.x/migrations
+https://laravel.com/docs/7.x/seeding
+https://laravel.com/docs/7.x/database-testing#writing-factories
+
+Task 2: I'm not sure what's meant by: "Enforce eager loading so that a questionnaire always
+loads with its associated questions." - I took this to mean adding a constructor to the
+`app/Models/Questionnaire.php` class, and adding the necessary functionality.
