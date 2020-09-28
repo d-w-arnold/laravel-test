@@ -13,7 +13,7 @@ class Questionnaire extends Model
      */
     public function __construct()
     {
-        $this->questions = Questionnaire::find(1)->hasQuestions;
+        $this->questions = $this->sortQuestionsByOrderKey(Questionnaire::find(1)->hasQuestions);
     }
 
     /**
@@ -30,5 +30,21 @@ class Questionnaire extends Model
     public function belongsToQuestions()
     {
         return $this->belongsToMany('App\Models\Question');
+    }
+
+    /**
+     * Sort questions by the newly made 'order_key' field, in .
+     *
+     * @param $qs array The questions array.
+     * @return array The sorted questions array.
+     */
+    private function sortQuestionsByOrderKey($qs)
+    {
+        $ordered = [];
+        foreach ($qs as $q) {
+            $ordered[$q->order_key] = $q;
+        }
+        ksort($ordered);
+        return array_values($ordered);
     }
 }
