@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Questionnaire extends Model
 {
-    protected $questions;
+    protected array $questions;
 
     /**
      * Questionnaire constructor.
@@ -21,7 +21,7 @@ class Questionnaire extends Model
      */
     public function hasQuestions()
     {
-        return $this->hasMany('App\Models\Question');
+        return Question::with('question')->get();
     }
 
     /**
@@ -29,7 +29,7 @@ class Questionnaire extends Model
      */
     public function belongsToQuestions()
     {
-        return $this->belongsToMany('App\Models\Question');
+        return Question::with('question')->get();
     }
 
     /**
