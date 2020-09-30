@@ -1,0 +1,29 @@
+The biggest difficultly was working not having the reassurance of testing or knowledge to know
+whether something I was coding was correct, so when in a successive task we're asked to build on what we've just created,
+it can cause a domino effect of problems.
+
+Task 6-10: A lot of my solutions don't work as expected;
+I just gave it my best shot having looked over the following docs for assistance:
+
+https://laravel.com/docs/8.x/eloquent-relationships#eager-loading
+https://laravel.com/docs/5.7/blade#displaying-data
+https://laravel.com/docs/8.x/responses#creating-responses
+https://laravel.com/docs/8.x/requests
+https://laravel.com/docs/8.x/routing#redirect-routes
+https://laravel.com/docs/8.x/http-tests#testing-views
+https://laravel.com/docs/8.x/testing
+
+Task 6: Had a HTTP 500 error coming up when trying to run `php artisan serve`,
+as my `.env` file needed more environment variable set - I spent a lot of time checking my project/database config
+and I eventually resorted to asking for assistance.
+
+Task 7: Attempted this by creating a new migration for a new table 'questionnaire_slug',
+and added a new route for when loading based on a provide slug.
+
+Task 8: Not sure if I have done enough in the 'QuestionnaireController',
+with more time would've been interested to have created the front-end in either React or Vue.
+
+Task 9: Wasn't sure if the new model 'Responses' needed any methods to define
+relationships with other models?
+
+Task 10: Not sure how thorough the testing needed to be for this task?
