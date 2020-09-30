@@ -17,12 +17,4 @@ class Responses extends Model
     protected $fillable = [
         'questionnaire_id'
     ];
-
-    /**
-     * Get the response that belongs to a the questionnaire being viewed.
-     */
-    public function belongsToQuestionnaire()
-    {
-        return $this->belongsTo('App\Models\Questionnaire');
-    }
 }
