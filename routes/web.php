@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\QuestionnaireController;
+use App\Http\Controllers\ResponsesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +19,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Looked into trying to use Route::middleware in order to return the view(...) and action a response
+
 Route::get('questionnaire/{questionnaire}', function () {
-    return view('questionnaire_output', [QuestionnaireController::class, 'single']);
+    return redirect('questionnaire_output', [QuestionnaireController::class, 'single'])->action(
+        [ResponsesController::class, 'store'], ['id' => '{questionnaire}']
+    );
 })->name('questionnaire');
 
 Route::get('questionnaire/{slug}', function () {
-    return view('questionnaire_output', [QuestionnaireController::class, 'single']);
+    return redirect('questionnaire_output', [QuestionnaireController::class, 'single'])->action(
+        [ResponsesController::class, 'store'], ['id' => '{questionnaire}']
+    );
 })->name('questionnaire_slug');

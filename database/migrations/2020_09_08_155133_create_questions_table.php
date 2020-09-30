@@ -17,8 +17,8 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('questionnaire_id');
             $table->string('question');
-            $table->timestamps();
             $table->decimal('order_key');
+            $table->timestamps();
         });
     }
 

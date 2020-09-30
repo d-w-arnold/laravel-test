@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Question extends Model
+class Responses extends Model
 {
     use Notifiable;
 
@@ -15,19 +15,11 @@ class Question extends Model
      * @var array
      */
     protected $fillable = [
-        'questionnaire_id', 'question', 'order_key'
+        'questionnaire_id'
     ];
 
     /**
-     * Get the questionnaire record associated with the question.
-     */
-    public function hasQuestionnaire()
-    {
-        return $this->hasOne('App\Models\Questionnaire');
-    }
-
-    /**
-     * Get the questionnaire that owns the question.
+     * Get the response that belongs to a the questionnaire being viewed.
      */
     public function belongsToQuestionnaire()
     {
