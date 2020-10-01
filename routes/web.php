@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\QuestionnaireController;
+use App\Http\Controllers\ReactController;
 use App\Http\Controllers\ResponsesController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,8 +28,14 @@ Route::get('questionnaire/{questionnaire}', function () {
     );
 })->name('questionnaire');
 
+//Route::get('questionnaire/{slug}', function () {
+//    return redirect('questionnaire_output', [QuestionnaireController::class, 'single'])->action(
+//        [ResponsesController::class, 'store'], ['id' => '{questionnaire}']
+//    );
+//})->name('questionnaire_slug');
+
 Route::get('questionnaire/{slug}', function () {
-    return redirect('questionnaire_output', [QuestionnaireController::class, 'single'])->action(
+    return redirect('react-view/public/index.html', [QuestionnaireController::class, 'show'])->action(
         [ResponsesController::class, 'store'], ['id' => '{questionnaire}']
     );
-})->name('questionnaire_slug');
+})->name('questionnaire');

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5e102981-66b2-4eac-b662-537e475eba59" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/.idea/react-view.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/src/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../react-view/yarn.lock" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1iHNZHPQF5IWMlb2dNCV4RqOeqz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e102981-66b2-4eac-b662-537e475eba59" name="Default Changelist" comment="" />
+      <created>1601560610652</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601560610652</updated>
+      <workItem from="1601560612356" duration="3000" />
+    </task>
+    <servers />
+  </component>
+</project>
