@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Notifications\Notifiable;
 
 class Questionnaire extends Model
@@ -19,24 +21,27 @@ class Questionnaire extends Model
     ];
 
     /**
+     * The attributes to be loaded with eager loading.
+     *
+     * @var array
+     */
+    protected $with = [
+        'hasQuestions'
+    ];
+
+    /**
      * Get the question records associated with the questionnaire.
      */
-    public function hasQuestions()
+    public function hasQuestions(): HasMany
     {
-        // return $this->hasMany('App\Models\Question'); // Before eager loading
-        return Questionnaire::with(array('questionnaire_id' => function ($query) {
-            $query->orderBy('order_key', 'ASC');
-        }))->get();
+        return $this->hasMany(Question::class)->orderBy('order_key');
     }
 
     /**
      * Get the questions that belong to the questionnaire.
      */
-    public function belongsToQuestions()
+    public function belongsToQuestions(): BelongsToMany
     {
-        // $this->belongsToMany('App\Models\Question'); // Before eager loading
-        return Questionnaire::with(array('questionnaire_id' => function ($query) {
-            $query->orderBy('order_key', 'ASC');
-        }))->get();
+        return $this->belongsToMany(Question::class)->orderBy('order_key');
     }
 }

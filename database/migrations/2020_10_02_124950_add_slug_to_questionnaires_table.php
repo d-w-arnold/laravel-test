@@ -2,9 +2,10 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuestionsTable extends Migration
+class AddSlugToQuestionnairesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +14,8 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('questionnaire_id');
-            $table->string('question');
-            $table->timestamps();
+        Schema::table('questionnaires', function (Blueprint $table) {
+            $table->string('slug')->after('name')->default('');
         });
     }
 
@@ -28,6 +26,8 @@ class CreateQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions');
+        Schema::table('questionnaires', function (Blueprint $table) {
+            $table->dropColumn('slug');
+        });
     }
 }

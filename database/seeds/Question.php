@@ -27,5 +27,20 @@ class Question extends Seeder
             'question' => "What is your name?",
             'order_key' => 1
         ]);
+        DB::table('questions')->insert([
+            'questionnaire_id' => 2,
+            'question' => "What is Autumn?",
+            'order_key' => 3
+        ]);
+        DB::table('questions')->insert([
+            'questionnaire_id' => 2,
+            'question' => "What vehicle do you drive?",
+            'order_key' => 2
+        ]);
+        DB::table('questions')->insert([
+            'questionnaire_id' => 2,
+            'question' => "What is your alias?",
+            'order_key' => 1
+        ]);
     }
 }

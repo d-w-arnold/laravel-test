@@ -2,12 +2,14 @@
 
 namespace Tests\Feature;
 
-use App\Http\Controllers\QuestionnaireController;
-use Illuminate\Testing\TestView;
+use App\Models\Questionnaire;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
 class ResponseTest extends TestCase
 {
+    use DatabaseMigrations;
+
     /**
      * A basic feature test example.
      *
@@ -15,12 +17,16 @@ class ResponseTest extends TestCase
      */
     public function testExample()
     {
-//        $response = $this->get('questionnaire/test-project1');
-//        $response->dumpHeaders();
-//        $response->dumpSession();
-//        $response->dump();
-
-        $view = $this->view('questionnaire/test-project1', [QuestionnaireController::class, 'single']);
-        $view->assertDontSee('No questionnaire found.');
+        $this->seed();
+        $questionnaire = Questionnaire::first();
+        $response = $this->post(route('questionnaire.submit', compact('questionnaire')), [
+            'form' => [
+                1 => 'here is my entry',
+                2 => 'here is my entry',
+                3 => 'here is my entry'
+            ]
+        ]);
+        $response->assertStatus(200);
+//        dd($response);
     }
 }

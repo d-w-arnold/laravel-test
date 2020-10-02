@@ -40,14 +40,6 @@
             top: 18px;
         }
 
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
         .links > a {
             color: #636b6f;
             padding: 0 25px;
@@ -58,8 +50,12 @@
             text-transform: uppercase;
         }
 
-        .m-b-md {
-            margin-bottom: 30px;
+        .marginBottom {
+            margin-bottom: 1em;
+        }
+
+        .invalid-feedback {
+            color: red;
         }
     </style>
 </head>
@@ -79,9 +75,24 @@
         </div>
     @endif
 
-    <div class="content">
-        <h1>Hello World!</h1>
-        {{ $single ?? 'No questionnaire found.' }}
+    <div class="container">
+        <h1>Questionnaire: {{ $questionnaire->name }}</h1>
+        <form action="{{ route('questionnaire.submit', compact('questionnaire')) }}" method="post">
+            @csrf
+            @foreach($questionnaire->hasQuestions as $question)
+                <div class="marginBottom">
+                    <label for="question-{{ $loop->index }}">{{ $loop->index + 1 }}) {{ $question->question }}</label>
+                    <input type="text" name="form[{{ $question->id }}]" value="{{ old('form')[$question->id] ?? null }}"
+                           id="question-{{ $loop->index }}"/>
+                    <div class="invalid-feedback">
+                        @error('form.' . $question->id)
+                        {{ 'This field is required.' }}
+                        @enderror
+                    </div>
+                </div>
+            @endforeach
+            <button>Submit!</button>
+        </form>
     </div>
 </div>
 </body>

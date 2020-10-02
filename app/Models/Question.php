@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Notifications\Notifiable;
 
 class Question extends Model
@@ -21,16 +23,16 @@ class Question extends Model
     /**
      * Get the questionnaire record associated with the question.
      */
-    public function hasQuestionnaire()
+    public function hasQuestionnaire(): HasOne
     {
-        return $this->hasOne('App\Models\Questionnaire');
+        return $this->hasOne(Questionnaire::class);
     }
 
     /**
      * Get the questionnaire that owns the question.
      */
-    public function belongsToQuestionnaire()
+    public function belongsToQuestionnaire(): BelongsTo
     {
-        return $this->belongsTo('App\Models\Questionnaire');
+        return $this->belongsTo(Questionnaire::class);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuestionnairesSlugTable extends Migration
+class AddOrderKeyToQuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateQuestionnairesSlugTable extends Migration
      */
     public function up()
     {
-        Schema::create('questionnaires_slug', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->boolean('open')->default(true);
-            $table->string('slug');
-            $table->timestamps();
+        Schema::table('questions', function (Blueprint $table) {
+            $table->integer('order_key')->default(0);
         });
     }
 
@@ -29,6 +25,8 @@ class CreateQuestionnairesSlugTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questionnaires_slug');
+        Schema::table('questions', function (Blueprint $table) {
+            $table->dropColumn('order_key');
+        });
     }
 }

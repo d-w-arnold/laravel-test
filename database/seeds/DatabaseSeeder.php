@@ -11,13 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // factory(Questionnaire::class, 3)->create(); // Tried to use a factory ?
-        for ($x = 0; $x < 3; $x++) {
-            $this->call(Questionnaire::class);
-        }
-
-        // For testing
+        $this->call(Questionnaire::class);
         $this->call(Question::class);
-        $this->call(QuestionnaireSlug::class);
     }
 }
